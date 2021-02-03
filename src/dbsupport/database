@@ -1,0 +1,62 @@
+Drop database if exists salon;
+create database salon;
+use salon;
+
+
+
+CREATE TABLE `customer` (
+  `customerId` int NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(45) DEFAULT NULL,
+  `lastName` varchar(45) DEFAULT NULL,
+  `phoneNumber` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `dateOfBIrth` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`customerId`)
+);
+
+CREATE TABLE `productservice` (
+  `productServiceId` int NOT NULL,
+  `productName` varchar(45) NOT NULL,
+  `productService_desc` varchar(45) NOT NULL,
+  `price` double NOT NULL
+);
+
+
+
+
+CREATE TABLE servicecharge( 
+customerId int, 
+productServiceId int, 
+bookDate VARCHAR(45), 
+bookTime VARCHAR(45), 
+bookingID VARCHAR(45) 
+);
+
+
+
+INSERT INTO `salon`.`customer` (`customerId`, `firstName`, `lastName`, `phoneNumber`, `address`, `dateOfBIrth`) VALUES ('1', 'Robert', 'test', '1234567890', 'Woodside', '1985-01-01');
+INSERT INTO `salon`.`customer` (`customerId`, `firstName`, `lastName`, `phoneNumber`, `address`, `dateOfBIrth`) VALUES ('2', 'Oscar', 'test2', '9876543210', 'SSunnyside', '1998-01-02');
+INSERT INTO `salon`.`customer` (`customerId`, `firstName`, `lastName`, `phoneNumber`, `address`, `dateOfBIrth`) VALUES ('3', 'Sam', 'test3', '3451231234', 'Jackson Height', '1987-03-03');
+INSERT INTO `salon`.`customer` (`customerId`, `firstName`, `lastName`, `phoneNumber`, `address`, `dateOfBIrth`) VALUES ('4', 'Harry', 'test3', '1122334455', 'Elmhuurst', '1991-01-04');
+INSERT INTO `salon`.`customer` (`customerId`, `firstName`, `lastName`, `phoneNumber`, `address`, `dateOfBIrth`) VALUES ('5', 'Nancy', 'Test4', '9988776655', 'Rego Park', '1999-01-09');
+INSERT INTO `salon`.`customer` (`customerId`, `firstName`, `lastName`, `phoneNumber`, `address`, `dateOfBIrth`) VALUES ('6', 'Renuka', 'Maharjan', '6462881363', 'Woodside', '1988-09-09');
+INSERT INTO `salon`.`customer` (`customerId`, `firstName`, `lastName`, `phoneNumber`, `address`, `dateOfBIrth`) VALUES ('7', 'Garry', 'Hope', '6466339812', 'Manhatten', '2000-11-20');
+INSERT INTO `salon`.`customer` (`customerId`, `firstName`, `lastName`, `phoneNumber`, `address`, `dateOfBIrth`) VALUES ('8', 'Kelly', 'Salt', '3344776622', 'Albany', '2001-02-15');
+INSERT INTO `salon`.`customer` (`customerId`, `firstName`, `lastName`, `phoneNumber`, `address`, `dateOfBIrth`) VALUES ('9', 'Joe', 'Biden', '9900998789', 'Long Island', '2003-01-25');
+
+INSERT INTO productservice values (1,'Manicire','Manicure Full Package',20);
+INSERT INTO productservice values (2,'Pedicare','Pedicure Full Package',15);
+INSERT INTO productservice values (3,'Facial F','Facial Full',30);
+INSERT INTO productservice values (4,'EyeBrow','Eye Brow Shapping',20);
+INSERT INTO productservice values (5,'Hair Cut','Hair Straight',25);
+
+
+INSERT INTO servicecharge values (3,2,'2020-12-05','12:30',1111);
+INSERT INTO servicecharge values (3,1,'2020-12-06','11:31',1112);
+INSERT INTO servicecharge values (2,3,'2020-12-07','02:32',1113);
+INSERT INTO servicecharge values (1,2,'2020-12-08','03:33',1114);
+INSERT INTO servicecharge values (4,2,'2020-12-09','14:34',1115);
+INSERT INTO servicecharge values (5,4,'2020-12-20','15:36',1116);
+INSERT INTO servicecharge values (9,5,'2020-12-21','16:37',1117);
+INSERT INTO servicecharge values (8,1,'2020-12-23','17:39',1118);
+INSERT INTO servicecharge values (7,2,'2020-12-25','18:50',1119);
